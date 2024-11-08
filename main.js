@@ -12,17 +12,49 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
 });
+const geometry = new THREE.BoxGeometry(10, 10, 10);
+const material = new THREE.MeshBasicMaterial( { color: 0xFF0000 } );
+const cube = new THREE.Mesh( geometry, material );
+const ico = new THREE.IcosahedronGeometry(10);
+const icoMaterial = new THREE.MeshPhongMaterial({ color:0xFFFFFF,shininess:75});
+const icoMesh = new THREE.Mesh(ico, icoMaterial);
+const pointLight = new THREE.PointLight(0xFFFFFF);
+pointLight.position.set(0, -10, 10);
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+const blueTexture = new THREE.TextureLoader().load('images/blue.jpg')
+const cloudTexture= new THREE.TextureLoader().load('images/cloud.png')
+scene.background = blueTexture;
+
+
+const logoTexture = new THREE.TextureLoader().load('images/logo.png')
+const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 );
+const logoMaterial = new THREE.MeshBasicMaterial({map: logoTexture})
+
+const logoMesh = new THREE.Mesh(sphereGeometry, logoMaterial);
+const baseMaterial = new THREE.MeshBasicMaterial({map: logoTexture})
+
+const baseMesh = new THREE.Mesh(sphereGeometry, baseMaterial);
+const normalTexture = new THREE.TextureLoader().load('images/cloud.png');
+const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 );
+const torusMaterial = new THREE.MeshStandardMaterial( {
+    normalMap: normalTexture,
+    roughness: 0,
+    metalness: .8
+} );
+
+const torusKnot = new THREE.Mesh( torusGeo, torusMaterial );
+const lightHelper = new THREE.PointLightHelper(pointLight);
+const gridHelper = new THREE.GridHelper(200,50);
+const controls = new OrbitControls(camera, renderer.domElement)
+
+ambientLight.position.set(25, -15, -400);
 renderer.render(scene, camera);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(50);
 camera.position.setX(-3);
-const geometry = new THREE.BoxGeometry(10, 10, 10);
-const material = new THREE.MeshBasicMaterial( { color: 0xFF0000 } );
-const cube = new THREE.Mesh( geometry, material );
-const ico = new THREE.IcosahedronGeometry(10);
-const icoMaterial = new THREE.MeshPhongMaterial({ color:0xFFFFFF});
-const icoMesh = new THREE.Mesh(ico, icoMaterial);
+
 scene.add( cube );
 cube.position.z = -15;
 cube.position.x = -15;
@@ -32,11 +64,7 @@ scene.add(icoMesh);
 scene.add(icoMesh);
 icoMesh.position.z= -15;
 icoMesh.position.x= 15;
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(0, -10, 10);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
-ambientLight.position.set(25, -15, -400);
 
 scene.add(pointLight);
 scene.add(ambientLight);
@@ -53,37 +81,21 @@ function animate() {
     renderer.render( scene, camera );
 }
 animate()
-const blueTexture = new THREE.TextureLoader().load('images/blue.jpg')
-const cloudTexture= new THREE.TextureLoader().load('images/cloud.png')
-scene.background = blueTexture;
 
-scene.background = baseTexture;
 
-const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 );
+scene.add(logoMesh)
 
-const baseMaterial = new THREE.MeshBasicMaterial({map: baseTexture})
-
-const baseMesh = new THREE.Mesh(sphereGeometry, baseMaterial);
 scene.add(baseMesh);
-const normalTexture = new THREE.TextureLoader().load('images/cloud.png');
-const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 );
-const torusMaterial = new THREE.MeshStandardMaterial( {
-    normalMap: normalTexture,
-    roughness: 0,
-    metalness: .8
-} );
 
-const torusKnot = new THREE.Mesh( torusGeo, torusMaterial );
 
 scene.add( torusKnot );
 torusKnot.position.y = 20
-const lightHelper = new THREE.PointLightHelper(pointLight);
+
 
 scene.add(lightHelper)
-const gridHelper = new THREE.GridHelper(200,50);
 
 scene.add(gridHelper)
-const controls = new OrbitControls(camera, renderer.domElement)
+
 
 
 document.querySelector('#app').innerHTML = `
