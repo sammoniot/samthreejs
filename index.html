@@ -7,157 +7,26 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sammoniot Three JS Demo</title>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+  <nav><a href="index.html">Home</a><a href="dataviz.html">Data Visualization</a> <a href="js.html">Dodgers JavaScript Experiment</a> </nav>
 </head>
-<body class="body">
-<div id="barGraph1"></div>
-<div id="barGraph2"></div>
-<div id="barGraph3"></div>
-<div id="barGraph4"></div>
-<div id="barGraph5"></div>
-<div id="barGraph6"></div>
-
-<script>
-  // First Bar Graph
-  const data1 = [
-    {
-      x: ['2020', '2021', '2022', '2023'], // X-axis labels
-      y: [2.9, 5.8, 4.4, 3.3], // Y-axis values
-      type: 'bar', // Specify the chart type as 'bar'
-      marker: {
-        color: ['#FF5733', '#33FF57', '#3357FF', '#800080'] // Bar colors
-      }
-    }
-  ];
-
-  const layout1 = {
-    title: 'Dodgers Average ERA (2020-2023)', // Graph title
-    xaxis: {
-      title: 'Years', // X-axis title
-    },
-    yaxis: {
-      title: 'Values', // Y-axis title
-    },
-  };
-
-  Plotly.newPlot('barGraph1', data1, layout1);
-
-  // Second Bar Graph
-  const data2 = [
-    {
-      x: ['2020', '2021', '2022', '2023'], // X-axis labels
-      y: [1.07, 1.44, 1.14, 1.39], // Y-axis values
-      type: 'bar', // Specify the chart type as 'bar'
-      marker: {
-        color: ['#FF5733', '#33FF57', '#3357FF', '#800080'] // Bar colors
-      }
-    }
-  ];
-
-  const layout2 = {
-    title: 'Dodgers Average Walks + Hits Per Inning (2020-2023)', // Graph title
-    xaxis: {
-      title: 'Years', // X-axis title
-    },
-    yaxis: {
-      title: 'Values', // Y-axis title
-    },
-  };
-
-  Plotly.newPlot('barGraph2', data2, layout2);
-  const data3 = [
-    {
-      x: ['2020', '2021', '2022', '2023'],
-      y: [24.6, 41, 47.2, 35.5],
-      type: 'bar',
-      marker: {
-        color: ['#FF5733', '#33FF57', '#3357FF', '#800080']
-      }
-    }
-  ];
-
-  const layout3 = {
-    title: 'Dodgers Average Strikeouts (2020-2023)',
-    xaxis: {
-      title: 'Years'
-    },
-    yaxis: {
-      title: 'Values'
-    }
-  };
-
-  Plotly.newPlot('barGraph3', data3, layout3);
-  const data4 = [{
-    x: ['2020', '2021', '2022', '2023'],
-    y: [7.7, 9.8, 10.1, 11.31],
-    type: 'bar',
-    marker: {
-      color: ['#FF5733', '#33FF57', '#3357FF', '#800080']
-    }
-  }
-  ];
-  const layout4 = {
-    title: 'Dodgers Average Home Runs Per Player (2020-2023)',
-    xaxis: {
-      title: 'Years'
-    },
-    yaxis: {
-      title: 'Values'
-    }
-  };
-  Plotly.newPlot('barGraph4',data4,layout4)
-  const data5 = [{
-    x: ['2020', '2021', '2022', '2023'],
-    y: [.251, .210, .222, .238],
-    type: 'bar',
-    marker: {
-      color: ['#FF5733', '#33FF57', '#3357FF', '#800080']
-    }
-  }
-  ];
-  const layout5 = {
-    title: 'Dodgers Average Batting Average Per Player (2020-2023)',
-    xaxis: {
-      title: 'Years'
-    },
-    yaxis: {
-      title: 'Values'
-    }
-  };
-  Plotly.newPlot('barGraph5',data5,layout5)
-  const data6 = [{
-    x: ['2020', '2021', '2022', '2023'],
-    y: [.796, .677, .695, .707],
-    type: 'bar',
-    marker: {
-      color: ['#FF5733', '#33FF57', '#3357FF', '#800080']
-    }
-  }
-  ];
-  const layout6 = {
-    title: 'Dodgers Average On Base Plus Slugging Percentage Per Player (2020-2023)',
-    xaxis: {
-      title: 'Years'
-    },
-    yaxis: {
-      title: 'Values'
-    }
-  };
-  Plotly.newPlot('barGraph6',data6,layout6)
-</script>
-
-<canvas id="bg"></canvas>
-<div id="app"></div>
-
-<script type="module" src="main.js"></script>
+<h1>Welcome to my portfolio!</h1>
+<p>Over my time spent as a Digit student,I have worked on a couple different projects incorporating JavaScript and/or data visualization. </p>
+<p>As you can tell by looking at my navbar,I am a huge Dodgers fan. This is how I combine my passion for baseball and learning more about programming.</p>
+<h2>My JavaScript Project October 2024</h2>
+<ul>
+  <li>Learned how to create functional buttons </li>
+  <li>Utilized EventListeners to greet visitors to my page</li>
+</ul>
+<h3><a href="dataviz.html">My Dodger Data Visualizations</a></h3>
+<ul>
+  <li>Created SVGs to analyze baseball statistics</li>
+  <li>Learned how to create bar graphs using Plotly</li>
+</ul>
 <footer>
   <p>&copy; 2024 Samantha Moniot.</p>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="https://www.linkedin.com/in/sammoniot-/">My LinkedIn</a></li>
+    <li><a href="https://sammoniot.github.io/myportfolio/">Portfolio</a></li>
+    <li><a href="https://www.linkedin.com/in/sammoniot-/">LinkedIn</a></li>
+
   </ul>
 </footer>
-</body>
-</html>
