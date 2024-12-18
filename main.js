@@ -5,7 +5,7 @@ import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
-import Plotly from 'plotly.js/dist/plotly';
+import * as Plotly from 'plotly.js/dist/plotly.min.js';
 
 function create3DBar(x, y, z, width, height, depth, color) {
     const geometry = new THREE.BoxGeometry(width, height, depth);
